@@ -1,0 +1,68 @@
+:root {
+    --Stile_font: Arial sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: #a8a8b4;
+    color: rgb(12, 12, 12);
+
+    & #container {
+        width: 256px;
+        display: grid;
+        gap: 6px;
+        border-radius: 10px;
+        place-items: center;
+
+        & #display-result {
+            height: 50px;
+            font-size: 2rem;
+            width: 300px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: var(--Stile_font);
+            text-align: end;
+        }
+
+        & #contenitore-bottoni {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+
+            & button {
+                width: 70px;
+                height: 40px;
+                border-radius: 3px;
+                font-size: 2rem;
+                font-family: var(--Stile_font);
+                border-style: none;
+                background: #8cabaa;
+            }
+
+            & button:hover {
+                background: #648590;
+            }
+
+            & button:active {
+                background: rgb(20, 105, 124);
+            }
+
+            & .operatore {
+                background: rgb(161, 175, 196);
+            }
+
+            & .operatore:hover {
+                background: rgb(132, 149, 173);
+            }
+
+            & .operatore:active {
+                background: rgb(82, 103, 135);
+            }
+        }
+    }
+}

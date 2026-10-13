@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  etlabora-db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    volumes:
+      - "./.mysql-data/db:/var/lib/mysql"
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: provadue
+      MYSQL_USER: root
+      MYSQL_PASSWORD: R4ndomS3cure
+      MYSQL_ROOT_PASSWORD: R4ndomS3cure

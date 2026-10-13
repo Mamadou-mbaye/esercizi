@@ -1,0 +1,18 @@
+h1 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+}
+#img-container {
+  background: url("assets/images/profile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: ;
+}
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}

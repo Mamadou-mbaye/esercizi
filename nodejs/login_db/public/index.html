@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div>
+      <form action="">
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" placeholder="password" />
+        <input type="button" id="submit-btn" value="submit" />
+      </form>
+    </div>
+    <script>
+      const container = document.getElementById("container");
+
+      const logValue = (username, password) => {
+        const input_name = document.querySelector("#username");
+        const input_password = document.querySelector("#password");
+        const submit_btn = document.querySelector("#submit-btn");
+        let name = input_name.value;
+
+        submit_btn.addEventListener("click", () => {
+          if (input_name.value.trim() === username) {
+            if (input_password.value.trim() === password) {
+              container.innerHTML += `<p>${username}</p>`;
+              input_name.value = "";
+              input_password.value = "";
+            } else {
+              alert("Password is incorrect");
+            }
+          } else {
+            alert("Username not found");
+          }
+        });
+      };
+
+      const User = (user) => {
+        let username = user.username;
+        let password = user.password;
+        console.log(`username: ${username}, password: ${password}`);
+        logValue(username, password);
+      };
+
+      const callUser = () => {
+        fetch("/user/get/1")
+          .then((response) => response.json())
+          .then((data) => User(data.user) /*console.log(data.user.password)*/);
+      };
+      callUser();
+    </script>
+  </body>
+</html>

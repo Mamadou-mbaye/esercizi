@@ -1,0 +1,30 @@
+.header {
+  height: 40px;
+  position: sticky;
+  top: 0;
+  background: #154c79;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.nav-list {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  & li {
+    cursor: pointer;
+  }
+}
+.footer {
+  width: 100vw;
+  height: 90px;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+li {
+  list-style-type: none;
+}

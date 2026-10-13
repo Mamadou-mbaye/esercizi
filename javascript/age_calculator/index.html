@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <mage charset="UTF-8" />
+    <mage name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age calculator</title>
+    <style>
+      main {
+        width: 200px;
+        & form {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form id="form">
+        <label for="birthdate">BirthDate</label>
+        <input type="date" id="birthdate" />
+        <input type="button" value="submit" id="btn-submit" />
+        <div><span id="user"></span><span id="user-age"></span></div>
+      </form>
+    </main>
+    <script>
+      const birthDate = document.getElementById("birthdate");
+      const btn_submit = document.getElementById("btn-submit");
+      const user_age = document.getElementById("user-age");
+      let date = "";
+      birthDate.addEventListener("change", () => {
+        date = birthDate.value;
+        user_age.innerHTML = person_name;
+      });
+
+      btn_submit.addEventListener("click", () => {
+        date = new Date(date);
+        let today_date = new Date();
+        let age = today_date.getFullYear() - date.getFullYear();
+        if (
+          today_date.getMonth() < date.getMonth() ||
+          (today_date.getMonth() === date.getMonth() &&
+            today_date.getDate() < date.getDate())
+        ) {
+          age--;
+        }
+        user_age.innerHTML = `${age} years old`;
+      });
+    </script>
+  </body>
+</html>

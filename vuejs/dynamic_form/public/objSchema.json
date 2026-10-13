@@ -1,0 +1,17 @@
+{
+  "fields": [
+    { "FieldKey": "nome", "Label": "Nome", "ControlType": "text", "isRequired": true },
+    {
+      "FieldKey": "dataNascita",
+      "Label": "Data di nascita",
+      "ControlType": "date",
+      "isRequired": false
+    },
+    {
+      "FieldKey": "codiceFiscale",
+      "Label": "Codice fiscale",
+      "ControlType": "text",
+      "isRequired": true
+    }
+  ]
+}
